@@ -71,7 +71,7 @@ public class Edge
 	static boolean CLOUD = true; 
 	
 	static int edgedevices = 1; 
-	static int networkproviders=2 ; 
+	static int networkproviders=1 ; 
 	
 	
 	 
@@ -142,9 +142,9 @@ public class Edge
 	private static void createDevices(int userId, String appId) { //method that was called up
 		FogDevice cloud = createDevice("Cloud-Datacenter", 1000, 10000, 5000, 5000, 0, 20, 10, 10); 
 		cloud.setParentId(-1);
-		FogDevice csp = createDevice("Edge-Decision", 4000, 4000, 8000, 6000, 1, 10, 100, 81.11);
+		FogDevice csp = createDevice("Edge-Decision", 1000, 1000, 2000, 2000, 1, 2, 80, 80.11);
 		csp.setParentId(cloud.getId()); 	
-		csp.setUplinkLatency(10);  
+		csp.setUplinkLatency(40);  
 	
 		fogDevices.add(cloud);
 		fogDevices.add(csp);
@@ -158,7 +158,7 @@ public class Edge
 	}
 
 	private static FogDevice addGw(String id, int userId, String appId, int parentId){
-		FogDevice td = createDevice("EdgeDevice-"+id, 6000, 2000, 500, 600, 2,50, 87.53, 82.44);
+		FogDevice td = createDevice("EdgeGateway-"+id, 12000, 2000, 1000, 600, 2,30, 50.53, 50.44);
 		fogDevices.add(td);
 		td.setParentId(parentId);
 		td.setUplinkLatency(50);
@@ -172,7 +172,7 @@ public class Edge
 	}
 	 // 
 	private static FogDevice addsp(String id, int userId, String appId, int parentId){
-		FogDevice sp = createDevice("EdgeDevices-"+id, 1000, 50, 10, 270, 3, 10, 12.53, 5.44);
+		FogDevice sp = createDevice("LocalEdge-"+id, 1000, 50, 10, 270, 3, 10, 12.53, 5.44);
 		sp.setParentId(parentId);
 		FogDevice sh = createDevice("Users"+id, 2000, 50, 100, 50, 4, 100, 19.53, 50.44);
 		sh.setParentId(parentId);

@@ -70,7 +70,7 @@ public class cloudIotModel {
 		static boolean CLOUD = true; 
 		
 		static int gateways = 1 ; 
-		static int networkproviders= 2; 
+		static int networkproviders= 1; 
 		
 
 		 
