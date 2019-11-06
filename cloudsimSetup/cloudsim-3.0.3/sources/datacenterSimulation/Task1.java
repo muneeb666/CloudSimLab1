@@ -72,7 +72,7 @@ public class Task1 {
 
 			// VM description
 			int vmid = 0;
-			int mips = 1000;
+			int mips = 800;
 			long size = 10000; // image size (MB)
 			int ram = 512; // vm memory (MB)
 			long bw = 1000;
@@ -93,7 +93,7 @@ public class Task1 {
 
 			// Cloudlet properties
 			int id = 0;
-			long length = 400000;
+			long length = 20000;
 			long fileSize = 300;
 			long outputSize = 300;
 			UtilizationModel utilizationModel = new UtilizationModelFull();
